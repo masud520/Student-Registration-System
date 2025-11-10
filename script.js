@@ -12,7 +12,6 @@ form.addEventListener("submit", (e) => {
 
   const student = { name, email, course, level, date: new Date().toLocaleString() };
 
-  // Get previous students or empty array
   const students = JSON.parse(localStorage.getItem("students")) || [];
   students.push(student);
 
