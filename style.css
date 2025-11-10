@@ -7,7 +7,7 @@
 }
 
 body {
-  background: linear-gradient(to right, #6a11cb, #2575fc);
+  background: linear-gradient(to right, #6a11cb, #25cafc);
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -61,7 +61,7 @@ input:focus, select:focus {
 /* Button styling */
 button {
   padding: 0.8rem;
-  background: #2575fc;
+  background: #25fc54;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -71,7 +71,7 @@ button {
 }
 
 button:hover {
-  background: #1a5ed8;
+  background: #d81a1a;
 }
 
 /* Links */
@@ -80,12 +80,29 @@ button:hover {
   text-align: center;
   margin-top: 1rem;
   text-decoration: none;
-  color: #2575fc;
+  color: #fc2530;
   font-weight: 500;
 }
 
 .view-link:hover {
   text-decoration: underline;
+}
+
+/* Search input styling */
+#searchInput {
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+#searchInput:focus {
+  border-color: #2575fc;
+  box-shadow: 0 0 5px rgba(37, 117, 252, 0.5);
+  outline: none;
 }
 
 /* Dashboard table */
@@ -107,7 +124,7 @@ table th, table td {
 }
 
 table th {
-  background: #2575fc;
+  background: #2925fc;
   color: #fff;
   border-radius: 8px 8px 0 0;
 }
@@ -128,8 +145,40 @@ table tr:nth-child(even) {
     padding: 1.5rem;
   }
 
-  input, select, button {
+  input, select, button, #searchInput {
     font-size: 0.95rem;
     padding: 0.7rem;
+  }
+}
+/* Mobile card layout for small screens */
+@media (max-width: 600px) {
+  table, thead, tbody, th, td, tr {
+    display: block; /* convert table to block elements */
+  }
+
+  thead tr {
+    display: none; /* hide headers */
+  }
+
+  tbody tr {
+    background: #fff;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+
+  tbody td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: none;
+    font-size: 0.95rem;
+  }
+
+  tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #555;
   }
 }
